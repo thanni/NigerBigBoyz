@@ -1,0 +1,436 @@
+<DOCTYPE! html>
+<html>
+<head>
+<title>NijBigboyz</title>
+         <link href="brideprice-theme.css" rel="stylesheet">
+       <link href="jquery.css" rel="stylesheet">
+        <link href="custom.css" rel="stylesheet" type="text/css">
+        <script src="analytics.js" async=""></script><script src="all.js" async="" id="facebook-jssdk"></script><script src="jquery-1.js"></script>
+        <script src="jquery.js"></script>
+        <script src="FacebookScript.js"></script>
+        <script>
+
+            $(document).on('pagebeforeshow', "#pageone,#disclaimer,#forfriend", function () {
+                $('#footer').css('display', 'none');
+            });
+            $(document).on("pagebeforehide", "#pageone,#disclaimer", function () {
+                /*$('#footer').css('display','inline-block');*/
+            });
+            $(document).on('pagebeforechange', function (e, data) {
+                var bridePriceSoFar = $('#footer #price').html();
+                $('#hiddenPrice').html(bridePriceSoFar);
+                $('#price').html(bridePriceSoFar);
+            });
+            $(document).on('pageshow', "#result", function () {
+
+                var bridePriceFigure = $('#price').html();
+                var bridePriceFbComment = $('#fb-comment').html();
+                var fbshare = 'https://m.facebook.com/dialog/feed?app_id=1420280761574575&link=http://www.brideprice.com.ng&picture=http://anakle.com.ng/apps/brideprice/img/logo-green.png&name=Check Your BridePrice App&description=My bride price is <b>NGN' + bridePriceFigure + '.00</b>.%3Cbr%2F%3E%3Cb%3EElder%27s+verdict%3A+%3C%2Fb%3E ' + bridePriceFbComment + '&redirect_uri=http://www.brideprice.com.ng';
+
+                $('#fb-share-link').attr('href', fbshare);
+
+
+                var bridePriceTwComment = $('#tw-comment').html();
+                var twshare = 'http://twitter.com/intent/tweet?original_referer=http://brideprice.com.ng/&text=My bride price is NGN' + bridePriceFigure + '.00. Elders Verdict: ' + bridePriceTwComment + '&via=bridepricecheck';
+                //twshare = twshare.slice(0,-1);
+                $('#tw-share-link').attr('href', twshare);
+
+
+                setTimeout(function () {
+                    $('#res').css('color', '#2D9670');
+                    $("#loading").css('display', 'none');
+                    $("#res").css('display', 'block');
+                }, 5000);
+
+            });
+
+            $(document).on("pagehide", "#result", function () {
+                $("#loading").css('display', 'block');
+                $("#res").css('display', 'none');
+                 $('#footer #price').html(0);
+                 $('#hiddenPrice').html(0);
+                 $('#price').html("Bros");
+            });
+
+        </script><script src="custom.js"></script>
+ <link rel="stylesheet" href="style.css" type="text/css" />	
+	
+</head>
+ <body class="ui-mobile-viewport ui-overlay-a">
+
+<div id="wrapper">
+	<h1><em>BigBoyz Game</em></h1>
+       
+        <div id="hiddenPrice" style="display:none !important;">0</div>
+
+        <div style="min-height: 729px;" tabindex="0" data-url="pageone" class="greenpage ui-page ui-page-theme-a ui-page-active" data-role="page" data-theme="a" id="pageone">
+            <div class="ui-header ui-bar-inherit" role="banner" data-role="header"><!--<h1>My App!</h1>			--><img src="money-icon.png" alt="logo" width="86" height="57"></div>
+
+            <div role="main" class="ui-content" data-role="content">
+                <p><br>
+                    PLay the game to find out if you are a big boy or Ajepako.</p>
+                    <p>Money get class</p>
+
+                <p><a style="text-decoration: none;" class="ui-btn ui-icon-heart ui-btn-icon-right" data-transition="slidefade" href="#pagetwo">Click to play</a></p>
+            </div>
+
+            <div class="ui-footer ui-bar-inherit" role="contentinfo" data-role="footer"><a style="text-decoration: none;" role="button" data-role="button" class="ui-btn ui-icon-info ui-btn-icon-left" href="#disclaimer">Disclaimer</a></div>
+        </div>
+        <!--page1-->
+    <div class="greenpage ui-page ui-page-theme-a" data-role="page" id="pagetwo" data-url="pagetwo" tabindex="0" style="min-height: 318px;">
+        <div data-role="header" role="banner" class="ui-header ui-bar-inherit"><!--<h1>My App!</h1>			--><img src="money-icon.png" alt="logo" width="86" height="57"> <a class="start-over top-refresh ui-btn-left ui-btn ui-icon-refresh ui-btn-icon-left" data-direction="reverse" data-transition="slidefade" href="#pageone" style="border: none; color: rgb(204, 204, 204); text-shadow: none; font-size: 1em; margin-top: -15px; text-decoration: none; background: none;" data-role="button" role="button">Restart</a></div>
+
+        <div data-role="content" class="ui-content" role="main">
+            <h2>What school did you attend ?</h2>
+
+            <ul data-count-theme="c" data-inset="true" data-role="listview" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+                <li class="price-row ui-li-has-count ui-first-child selected-option" data-icon="false"><a href="http://www.brideprice.com.ng/#" class="ui-btn" style="text-decoration: none;">Private School<span class="ui-li-count price-tag ui-body-c" id="+ 2"></span></a></li>
+                <li class="price-row ui-li-has-count" data-icon="false"><a href="http://www.brideprice.com.ng/#" class="ui-btn" style="text-decoration: none;">Public School<span class="ui-li-count price-tag ui-body-c" id="+ 1"></span></a></li>
+               
+            </ul>
+
+            <p></p>
+
+            <div class="ui-grid-a">
+                <div class="ui-block-a"><a class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="slidefade" href="http://www.brideprice.com.ng/#pageone" style="text-decoration: none;">Previous</a></div>
+
+                <div class="ui-block-b"><a class="ui-btn ui-icon-arrow-r ui-btn-icon-right" data-transition="slidefade" href="http://www.brideprice.com.ng/#pagethree" style="text-decoration: none;">Next</a></div>
+            </div>
+
+            <p></p>
+        </div>
+    </div>
+    <!--page2-->
+
+    <div class="greenpage ui-page ui-page-theme-a" data-role="page" id="pagethree" data-url="pagethree" tabindex="0" style="min-height: 318px;">
+        <div data-role="header" role="banner" class="ui-header ui-bar-inherit"><!--<h1>My App!</h1>			--><img src="money-icon.png" alt="logo" width="86" height="57"> <a class="start-over top-refresh ui-btn-left ui-btn ui-icon-refresh ui-btn-icon-left" data-direction="reverse" data-transition="slidefade" href="http://www.brideprice.com.ng/#pageone" style="text-decoration: none;" data-role="button" role="button">Restart</a></div>
+
+        <div data-role="content" class="ui-content" role="main">
+            <h2>Institution</h2>
+
+            <ul data-count-theme="c" data-inset="true" data-role="listview" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+                <li class="price-row ui-li-has-count ui-first-child selected-option" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">State School<span class="ui-li-count price-tag ui-body-c" id="+ 1"></span></a></li>
+                <li class="price-row ui-li-has-count" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">Federal School<span class="ui-li-count price-tag ui-body-c" id="+ 2"></span></a></li>
+                
+            </ul>
+
+            <p></p>
+
+            <div class="ui-grid-a">
+                <div class="ui-block-a"><a class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="slidefade" href="http://www.brideprice.com.ng/#pagetwo" style="text-decoration: none;">Previous</a></div>
+
+                <div class="ui-block-b"><a class="ui-btn ui-icon-arrow-r ui-btn-icon-right" data-transition="slidefade" href="http://www.brideprice.com.ng/#pagefour" style="text-decoration: none;">Next</a></div>
+            </div>
+
+            <p></p>
+        </div>
+    </div>
+    <!--page3-->
+
+    <div class="greenpage ui-page ui-page-theme-a" data-role="page" id="pagefour" data-url="pagefour" tabindex="0" style="min-height: 318px;">
+        <div data-role="header" role="banner" class="ui-header ui-bar-inherit"><!--<h1>My App!</h1>			--><img src="money-icon.png" alt="logo" width="101" height="57"> <a class="start-over top-refresh ui-btn-left ui-btn ui-icon-refresh ui-btn-icon-left" data-direction="reverse" data-transition="slidefade" href="http://www.brideprice.com.ng/#pageone" style="text-decoration: none;" data-role="button" role="button">Restart</a></div>
+
+        <div data-role="content" class="ui-content" role="main">
+            <h2>Class of Institution</h2>
+
+            <ul data-count-theme="c" data-inset="true" data-role="listview" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+                <li class="price-row ui-li-has-count ui-first-child selected-option" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">University<span class="ui-li-count price-tag ui-body-c" id="+ 3"></span></a></li>
+                <li class="price-row ui-li-has-count" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">Polytechnics<span class="ui-li-count price-tag ui-body-c" id="+ 2"></span></a></li>
+                <li class="price-row ui-li-has-count" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">Avanced Secondary School<br>
+                    College of Education<span class="ui-li-count price-tag ui-body-c" id="+ 1"></span></a></li>
+            </ul>
+
+            <p></p>
+
+            <div class="ui-grid-a">
+                <div class="ui-block-a"><a class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="slidefade" href="http://www.brideprice.com.ng/#pagethree" style="text-decoration: none;">Previous</a></div>
+
+                <div class="ui-block-b"><a class="ui-btn ui-icon-arrow-r ui-btn-icon-right" data-transition="slidefade" href="http://www.brideprice.com.ng/#pagefive" style="text-decoration: none;">Next</a></div>
+            </div>
+
+            <p></p>
+        </div>
+    </div>
+    <!--page4-->
+
+    <div class="greenpage ui-page ui-page-theme-a" data-role="page" id="pagefive" data-url="pagefive" tabindex="0" style="min-height: 318px;">
+        <div data-role="header" role="banner" class="ui-header ui-bar-inherit"><!--<h1>My App!</h1>			--><img src="money-icon.png" alt="logo" width="86" height="57"> <a class="start-over top-refresh ui-btn-left ui-btn ui-icon-refresh ui-btn-icon-left" data-direction="reverse" data-transition="slidefade" href="http://www.brideprice.com.ng/#pageone" style="text-decoration: none;" data-role="button" role="button">Restart</a></div>
+
+        <div data-role="content" class="ui-content" role="main">
+            <h2>Did you serve your father land ?</h2>
+
+            <ul data-count-theme="c" data-inset="true" data-role="listview" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+                <li class="price-row ui-li-has-count ui-first-child" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">Ghost corper<span class="ui-li-count price-tag ui-body-c" id="+ 2"> </span></a></li>
+                <li class="price-row ui-li-has-count" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">Real niger corper <span class="ui-li-count price-tag ui-body-c" id="+ 3"> </span></a></li>
+                <li class="price-row ui-li-has-count selected-option" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">No<span class="ui-li-count price-tag ui-body-c" id="+ 1"> </span></a></li>
+                
+            </ul>
+
+            <p></p>
+
+            <div class="ui-grid-a">
+                <div class="ui-block-a"><a class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="slidefade" href="http://www.brideprice.com.ng/#pagefour" style="text-decoration: none;">Previous</a></div>
+
+                <div class="ui-block-b"><a class="ui-btn ui-icon-arrow-r ui-btn-icon-right" data-transition="slidefade" href="http://www.brideprice.com.ng/#pagesix" style="text-decoration: none;">Next</a></div>
+            </div>
+
+            <p></p>
+        </div>
+    </div>
+    <!--page5-->
+
+    <div class="greenpage ui-page ui-page-theme-a" data-role="page" id="pagesix" data-url="pagesix" tabindex="0" style="min-height: 318px;">
+        <div data-role="header" role="banner" class="ui-header ui-bar-inherit"><!--<h1>My App!</h1>			--><img src="money-icon.png" alt="logo" width="86" height="57"> <a class="start-over top-refresh ui-btn-left ui-btn ui-icon-refresh ui-btn-icon-left" data-direction="reverse" data-transition="slidefade" href="http://www.brideprice.com.ng/#pageone" style="text-decoration: none;" data-role="button" role="button">Restart</a></div>
+
+        <div data-role="content" class="ui-content" role="main">
+            <h2>What work do you do ?</h2>
+
+            <ul data-count-theme="c" data-inset="true" data-role="listview" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+                <li class="price-row ui-li-has-count ui-first-child" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">Jobless<span class="ui-li-count price-tag ui-body-c" id="+ 1"> </span></a></li>
+                <li class="price-row ui-li-has-count selected-option" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">Huzzling<span class="ui-li-count price-tag ui-body-c" id="+ 2"> </span></a></li>
+                <li class="price-row ui-li-has-count" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">Federal Government job<span class="ui-li-count price-tag ui-body-c" id="+ 5"> </span></a></li>
+                <li class="price-row ui-li-has-count" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">owned business <span class="ui-li-count price-tag ui-body-c" id="+ 4"> </span></a></li>
+                <li class="price-row ui-li-has-count ui-last-child" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">Working with private company<span class="ui-li-count price-tag ui-body-c" id="+ 3"> </span></a></li>
+            </ul>
+
+            <p></p>
+
+            <div class="ui-grid-a">
+                <div class="ui-block-a"><a class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="slidefade" href="http://www.brideprice.com.ng/#pagefive" style="text-decoration: none;">Previous</a></div>
+
+                <div class="ui-block-b"><a class="ui-btn ui-icon-arrow-r ui-btn-icon-right" data-transition="slidefade" href="http://www.brideprice.com.ng/#pageseven" style="text-decoration: none;">Next</a></div>
+            </div>
+
+            <p></p>
+        </div>
+    </div>
+    <!--page6-->
+
+    <div class="greenpage ui-page ui-page-theme-a" data-role="page" id="pageseven" data-url="pageseven" tabindex="0" style="min-height: 318px;">
+        <div data-role="header" role="banner" class="ui-header ui-bar-inherit"><!--<h1>My App!</h1>			--><img src="money-icon.png" alt="logo" width="86" height="57"> <a class="start-over top-refresh ui-btn-left ui-btn ui-icon-refresh ui-btn-icon-left" data-direction="reverse" data-transition="slidefade" href="http://www.brideprice.com.ng/#pageone" style="text-decoration: none;" data-role="button" role="button">Restart</a></div>
+
+        <div data-role="content" class="ui-content" role="main">
+            <h2>Means of transportation to work</h2>
+
+            <ul data-count-theme="c" data-inset="true" data-role="listview" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+                <li class="price-row ui-li-has-count ui-first-child" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">keke napep<span class="ui-li-count price-tag ui-body-c" id="+ 3"> </span></a></li>
+                <li class="price-row ui-li-has-count" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">commercial bus<span class="ui-li-count price-tag ui-body-c" id="+ 2"> </span></a></li>
+                <li class="price-row ui-li-has-count" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">legediz benz <span class="ui-li-count price-tag ui-body-c" id="+ 1"> </span></a></li>
+                <li class="price-row ui-li-has-count" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">personal car <span class="ui-li-count price-tag ui-body-c" id="+ 5"> </span></a></li>
+                <li class="price-row ui-li-has-count selected-option" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">Drop<span class="ui-li-count price-tag ui-body-c" id="+ 4"> </span></a></li>
+                
+            </ul>
+
+            <p></p>
+
+            <div class="ui-grid-a">
+                <div class="ui-block-a"><a class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="slidefade" href="http://www.brideprice.com.ng/#pagesix" style="text-decoration: none;">Previous</a></div>
+
+                <div class="ui-block-b"><a class="ui-btn ui-icon-arrow-r ui-btn-icon-right" data-transition="slidefade" href="http://www.brideprice.com.ng/#pageeight" style="text-decoration: none;">Next</a></div>
+            </div>
+
+            <p></p>
+        </div>
+    </div>
+    <!--page7-->
+
+    <div class="greenpage ui-page ui-page-theme-a" data-role="page" id="pageeight" data-url="pageeight" tabindex="0" style="min-height: 318px;">
+        <div data-role="header" role="banner" class="ui-header ui-bar-inherit"><!--<h1>My App!</h1>			--><img src="money-icon.png" alt="logo" width="86" height="57"> <a class="start-over top-refresh ui-btn-left ui-btn ui-icon-refresh ui-btn-icon-left" data-direction="reverse" data-transition="slidefade" href="http://www.brideprice.com.ng/#pageone" style="text-decoration: none;" data-role="button" role="button">Restart</a></div>
+
+        <div data-role="content" class="ui-content" role="main">
+            <h2>How many cars do you have ?</h2>
+
+            <ul data-count-theme="c" data-inset="true" data-role="listview" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+                <li class="price-row ui-li-has-count ui-first-child" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">One<span class="ui-li-count price-tag ui-body-c" id="+ 1"> </span></a></li>
+                <li class="price-row ui-li-has-count" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">Two<span class="ui-li-count price-tag ui-body-c" id="+ 2"> </span></a></li>
+                <li class="price-row ui-li-has-count selected-option" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">Three<span class="ui-li-count price-tag ui-body-c" id="+ 3"> </span></a></li>
+                <li class="price-row ui-li-has-count" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">Many <span class="ui-li-count price-tag ui-body-c" id="+ 4"> </span></a></li>
+                
+            </ul>
+
+            <p></p>
+
+            <div class="ui-grid-a">
+                <div class="ui-block-a"><a class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="slidefade" href="http://www.brideprice.com.ng/#pageseven" style="text-decoration: none;">Previous</a></div>
+
+                <div class="ui-block-b"><a class="ui-btn ui-icon-arrow-r ui-btn-icon-right" data-transition="slidefade" href="http://www.brideprice.com.ng/#pagenine" style="text-decoration: none;">Next</a></div>
+            </div>
+
+            <p></p>
+        </div>
+    </div>
+    <!--page8-->
+    <!--page9-->
+
+    <div class="greenpage ui-page ui-page-theme-a" data-role="page" id="pagenine" data-url="pagenine" tabindex="0" style="min-height: 318px;">
+        <div data-role="header" role="banner" class="ui-header ui-bar-inherit"><!--<h1>My App!</h1>			--><img src="money-icon.png" alt="logo" width="86" height="57"> <a class="start-over top-refresh ui-btn-left ui-btn ui-icon-refresh ui-btn-icon-left" data-direction="reverse" data-transition="slidefade" href="http://www.brideprice.com.ng/#pageone" style="text-decoration: none;" data-role="button" role="button">Restart</a></div>
+
+        <div data-role="content" class="ui-content" role="main">
+            <h2>Phone model</h2>
+
+            <ul data-count-theme="c" data-inset="true" data-role="listview" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+                <li class="price-row ui-li-has-count ui-first-child selected-option" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">Nokia<span class="ui-li-count price-tag ui-body-c" id="+ 1"> </span></a></li>
+                <li class="price-row ui-li-has-count" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">Samsung<span class="ui-li-count price-tag ui-body-c" id="+ 3"> </span></a></li>
+                <li class="price-row ui-li-has-count" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">iphone<span class="ui-li-count price-tag ui-body-c" id="+ 4"> </span></a></li>
+                <li class="price-row ui-li-has-count" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">Techno and family<span class="ui-li-count price-tag ui-body-c" id="+ 2"> </span></a></li>
+                
+            </ul>
+
+            <p></p>
+
+            <div class="ui-grid-a">
+                <div class="ui-block-a"><a class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="slidefade" href="http://www.brideprice.com.ng/#pagenine" style="text-decoration: none;">Previous</a></div>
+
+                <div class="ui-block-b"><a class="ui-btn ui-icon-arrow-r ui-btn-icon-right" data-transition="slidefade" href="http://www.brideprice.com.ng/#pageeleven" style="text-decoration: none;">Next</a></div>
+            </div>
+
+            <p></p>
+        </div>
+    </div>
+    <!--page10-->
+
+    <div class="greenpage ui-page ui-page-theme-a" data-role="page" id="pageeleven" data-url="pageeleven" tabindex="0" style="min-height: 617px;">
+        <div data-role="header" role="banner" class="ui-header ui-bar-inherit"><!--<h1>My App!</h1>			--><img src="money-icon.png" alt="logo" width="86" height="57"> <a class="start-over top-refresh ui-btn-left ui-btn ui-icon-refresh ui-btn-icon-left" data-direction="reverse" data-transition="slidefade" href="http://www.brideprice.com.ng/#pageone" style="text-decoration: none;" data-role="button" role="button">Restart</a></div>
+
+        <div data-role="content" class="ui-content" role="main">
+            <h2>Tablet Brand</h2>
+
+            <ul data-count-theme="c" data-inset="true" data-role="listview" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+                <li class="price-row ui-li-has-count ui-first-child" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">Apple ipad<span class="ui-li-count price-tag ui-body-c" id="+ 4"> </span></a></li>
+                <li class="price-row ui-li-has-count" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">Samsung Galazy<span class="ui-li-count price-tag ui-body-c" id="+ 3"> </span></a></li>
+                <li class="price-row ui-li-has-count selected-option" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">Microsoft Surface<span class="ui-li-count price-tag ui-body-c" id="+ 2"> </span></a></li>
+                <li class="price-row ui-li-has-count" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">Techno and family<span class="ui-li-count price-tag ui-body-c" id="+ 1"> </span></a></li>
+                
+            </ul>
+
+            <p></p>
+
+            <div class="ui-grid-a">
+                <div class="ui-block-a"><a class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="slidefade" href="http://www.brideprice.com.ng/#pageten" style="text-decoration: none;">Previous</a></div>
+
+                <div class="ui-block-b"><a class="ui-btn ui-icon-arrow-r ui-btn-icon-right" data-transition="slidefade" href="http://www.brideprice.com.ng/#pagetwelve" style="text-decoration: none;">Next</a></div>
+            </div>
+
+            <p></p>
+        </div>
+    </div>
+    <!--page11-->
+
+    <div class="greenpage ui-page ui-page-theme-a" data-role="page" id="pagetwelve" data-url="pagetwelve" tabindex="0" style="min-height: 617px;">
+        <div data-role="header" role="banner" class="ui-header ui-bar-inherit"><!--<h1>My App!</h1>			--><img src="money-icon.png" alt="logo" width="86" height="57"> <a class="start-over top-refresh ui-btn-left ui-btn ui-icon-refresh ui-btn-icon-left" data-direction="reverse" data-transition="slidefade" href="http://www.brideprice.com.ng/#pageone" style="text-decoration: none;" data-role="button" role="button">Restart</a></div>
+
+        <div data-role="content" class="ui-content" role="main">
+            <h2>How do you buy your wears ?</h2>
+
+            <ul data-count-theme="c" data-inset="true" data-role="listview" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+                <li class="price-row ui-li-has-count ui-first-child" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">Bend down and select(okirika)<span class="ui-li-count price-tag ui-body-c" id="+ 1"> </span></a></li>
+                <li class="price-row ui-li-has-count" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">Boutique(ebeano)<span class="ui-li-count price-tag ui-body-c" id="+ 2"> </span></a></li>
+                <li class="price-row ui-li-has-count selected-option" data-icon="false"><a href="http://www.brideprice.com.ng/#" style="text-decoration: none;" class="ui-btn">online shopping<span class="ui-li-count price-tag ui-body-c" id="+ 3"> </span></a></li>
+                
+            </ul>
+
+            <p></p>
+
+            <div class="ui-grid-a">
+                <div class="ui-block-a"><a class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="slidefade" href="http://www.brideprice.com.ng/#pageeleven" style="text-decoration: none;">Previous</a></div>
+
+                <div class="ui-block-b"><a class="ui-btn ui-icon-arrow-r ui-btn-icon-right" data-transition="slidefade" href="http://www.brideprice.com.ng/#pagethirteen" style="text-decoration: none;">Next</a></div>
+            </div>
+
+            <p></p>
+        </div>
+    </div>
+    <!--page12-->
+
+    <div data-url="pagethirteen" class="greenpage" data-role="page" id="pagethirteen">
+        <div data-role="header"><!--<h1>My App!</h1>			--><img src="money-icon.png" alt="logo" width="86" height="57"> <a style="text-decoration: none;" class="ui-btn ui-icon-refresh ui-btn-icon-left start-over top-refresh" data-direction="reverse" data-transition="slidefade" href="#pageone">Restart</a></div>
+
+        <div data-role="content">
+            <h2>Are you a Landlord or a Tenant ?</h2>
+
+            <ul data-count-theme="c" data-inset="true" data-role="listview">
+                <li class="price-row" data-icon="false"><a style="text-decoration: none;" href="#">Landlord<span class="ui-li-count price-tag" id="+ 2"> </span></a></li>
+                <li class="price-row" data-icon="false"><a style="text-decoration: none;" href="#">Tenant<span class="ui-li-count price-tag" id="+ 1"> </span></a></li>
+            </ul>
+
+            <p></p>
+
+            <div class="ui-grid-a">
+                <div class="ui-block-a"><a style="text-decoration: none;" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="slidefade" href="#pagetwelve">Previous</a></div>
+
+                <div class="ui-block-b"><a style="text-decoration: none;" class="ui-btn ui-icon-check ui-btn-icon-right" data-transition="slidefade" href="#result">Submit</a></div>
+            </div>
+
+            <p></p>
+            <!--	 <p>
+<a href="#pageone" data-transition="slidefade" data-direction="reverse" class="ui-btn ui-icon-refresh ui-btn-icon-left start-over">Start Over</a>
+</p>            --></div>
+    </div>
+  <!--page16-->
+
+    <div data-url="result" data-role="page" id="result">
+        <div class="result-header affixed-header-style" data-role="header"><!--<h1>My App!</h1>			--><img src="money-icon.png" alt="logo" width="86" height="57"> <a style="text-decoration: none;" class="ui-btn ui-icon-refresh ui-btn-icon-left start-over top-refresh" data-direction="reverse" data-transition="slidefade" href="#pageone">Restart</a></div>
+
+        <div data-role="content">
+        <!--      <div id="loading"><img alt="loading" src="Bride%20Price%20App_files/money-icon.png" height="166" width="160"></div>
+  -->
+            <div id="res"><!--    <h2>Elder's Verdict!</h2> -->
+                <p></p>
+                <p></p>
+                <p ></p>
+
+                <div><img alt="elders" src="money-icon.png" width="274px"></div>
+
+                <div>
+                    <h4>You are </h4>
+
+   <!--               /*  <h2><span>NGN </span><span id="price">0</span><span>.00</span></h2>
+-->
+                    <h4 id="elder-comment"></h4>
+                   <!--  <div style="padding: 15px;">
+                        <a style="text-decoration: none;" target="_blank" href="#%21" id="download-certificate">Click here to get your certificate</a>
+                    </div> -->
+                </div>
+
+           
+                <!-- <p>
+<a href="#pageone" data-transition="slidefade" data-direction="reverse" class="ui-btn ui-icon-refresh ui-btn-icon-left start-over">Start Over</a>
+</p>            --></div>
+        </div>
+    </div>
+    <!--result-->
+
+    <div data-url="disclaimer" class="greenpage" data-dialog="true" data-role="page" id="disclaimer">
+        <div data-role="header">
+            <h1>Disclaimer</h1>
+        </div>
+
+        <div data-role="content">
+            <h4>We are responsible for optimal performance of this app, but we are not responsible for what you do with it. </h4>
+            <p>This app is a joke, and all there is to it. </p>
+        </div>
+        <!--      <div data-role="footer">
+<a href="#pageone" data-transition="slidefade" data-direction="reverse">Okay</a>
+</div>          --></div>
+    <!--disclaimer-->
+
+  <!--  <div style="display: none;" data-id="main-footer" data-role="footer" id="footer"><span>NGN </span><span id="price">0</span></div>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-51322228-1', 'brideprice.com.ng');
+        ga('send', 'pageview');
+
+    </script>
+    <script>
+        $(function(){
+            $('#download-certificate').removeClass('ui-link');
+            $('a').css({ 'text-decoration': 'none' });
+        });
+
+    </script>
+    
+<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon-loading"></span><h1>loading</h1></div><div class=" fb_reset" id="fb-root"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe src="Bride%20Price%20App_files/V80PAcvrynR.htm" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_http" scrolling="no" allowtransparency="true" name="fb_xdm_frame_http" frameborder="0"></iframe><iframe src="Bride%20Price%20App_files/V80PAcvrynR_002.htm" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_https" scrolling="no" allowtransparency="true" name="fb_xdm_frame_https" frameborder="0"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>--></body></html>
